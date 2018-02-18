@@ -2,6 +2,10 @@
     "name": "gatsby-starter-typescript",
     "description": "Gatsby TypeScript starter",
     "version": "1.0.0",
+    "engines": {
+        "node": ">=8.9.0",
+        "npm": ">=4.0.0"
+    },
     "author": "Kyle Mathews <mathews.kyle@gmail.com>",
     "dependencies": {
         "gatsby": "^1.9.119",

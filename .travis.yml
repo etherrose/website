@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - "lts/*"
+
+install:
+    - npm i
+
+script:
+    - npm run build
+
+before_deploy:
+    - ./bin/fiddleWithGitIgnore.sh
+    - npm prune --production
+
+deploy:
+    provider: azure_web_apps
