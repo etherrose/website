@@ -1,23 +1,22 @@
 {
-    "name": "gatsby-starter-typescript",
-    "description": "Gatsby TypeScript starter",
-    "version": "1.0.0",
+    "name": "ether-rose",
+    "description": "Ether Rose Website",
+    "version": "0.1.0",
     "engines": {
         "node": ">=8.9.0",
         "npm": ">=4.0.0"
     },
-    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+    "author": "hoo29 & TerminalStar",
     "dependencies": {
         "gatsby": "^1.9.119",
         "gatsby-link": "^1.6.28",
         "gatsby-plugin-react-helmet": "^1.0.8",
         "gatsby-plugin-typescript": "^1.4.10"
     },
-    "keywords": [
-        "gatsby, typescript"
-    ],
+    "repository": {
+        "url": "https://github.com/etherrose/website"
+    },
     "license": "MIT",
-    "main": "n/a",
     "scripts": {
         "build": "gatsby build",
         "start": "gatsby develop",
@@ -32,9 +31,5 @@
         "prettier": "^1.8.2",
         "tslint": "^5.9.1",
         "typescript": "^2.7.2"
-    },
-    "contributors": [
-        "fabien0102 <fabien0102@gmail.com>",
-        "Hays Clark <hays.clark@gmail.com>"
-    ]
+    }
 }
