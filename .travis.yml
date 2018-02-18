@@ -9,9 +9,8 @@ script:
     - npm run build
 
 before_deploy:
-    - chmod +x ./bin/fiddleWithGitIgnore.sh
-    - ./bin/fiddleWithGitIgnore.sh
-    - npm prune --production
+    - chmod +x ./bin/removeFolders.sh
+    - ./bin/removeFolders.sh
 
 deploy:
     provider: azure_web_apps
