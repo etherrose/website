@@ -19,6 +19,10 @@ exitWithMessageOnError () {
 # Prerequisites
 # -------------
 
+# Verify node.js installed
+hash node 2>/dev/null
+exitWithMessageOnError "Missing node.js executable, please install node.js, if already installed make sure it can be reached from current environment."
+
 # Setup
 # -----
 
@@ -60,15 +64,50 @@ if [[ ! -n "$KUDU_SYNC_CMD" ]]; then
   fi
 fi
 
+# Node Helpers
+# ------------
+
+selectNodeVersion () {
+  if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
+    SELECT_NODE_VERSION="$KUDU_SELECT_NODE_VERSION_CMD \"$DEPLOYMENT_SOURCE\" \"$DEPLOYMENT_TARGET\" \"$DEPLOYMENT_TEMP\""
+    eval $SELECT_NODE_VERSION
+    exitWithMessageOnError "select node version failed"
+
+    if [[ -e "$DEPLOYMENT_TEMP/__nodeVersion.tmp" ]]; then
+      NODE_EXE=`cat "$DEPLOYMENT_TEMP/__nodeVersion.tmp"`
+      exitWithMessageOnError "getting node version failed"
+    fi
+
+    if [[ -e "$DEPLOYMENT_TEMP/__npmVersion.tmp" ]]; then
+      NPM_JS_PATH=`cat "$DEPLOYMENT_TEMP/__npmVersion.tmp"`
+      exitWithMessageOnError "getting npm version failed"
+    fi
+
+    if [[ ! -n "$NODE_EXE" ]]; then
+      NODE_EXE=node
+    fi
+
+    NPM_CMD="\"$NODE_EXE\" \"$NPM_JS_PATH\""
+  else
+    NPM_CMD=npm
+    NODE_EXE=node
+  fi
+}
+
 ##################################################################################################################################
 # Deployment
 # ----------
 
 echo Handling node.js deployment.
 
-"$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
-exitWithMessageOnError "Kudu Sync failed"
+# 1. KuduSync
+if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
+  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
+  exitWithMessageOnError "Kudu Sync failed"
+fi
 
+# 2. Select node version
+selectNodeVersion
 
 ##################################################################################################################################
 echo "Finished successfully."
