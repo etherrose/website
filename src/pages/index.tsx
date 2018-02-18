@@ -24,7 +24,7 @@ export default class extends React.Component<IndexPageProps, {}> {
                 <p>
                     Hey fren <strong>{this.props.data.site.siteMetadata.title}</strong> site.
                 </p>
-                <p>Now go build something great.</p>
+                <p>Now go build something great. How do I Ops</p>
                 <Link to='/page-2/'>Go to page 2</Link>
             </div>
         );
