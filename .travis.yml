@@ -9,6 +9,7 @@ script:
     - npm run build
 
 before_deploy:
+    - chmod +x ./bin/fiddleWithGitIgnore.sh
     - ./bin/fiddleWithGitIgnore.sh
     - npm prune --production
 
