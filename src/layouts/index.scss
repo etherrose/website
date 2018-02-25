@@ -1,0 +1,27 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@import './amBurger';
+
+@include foundation-xy-grid-classes(
+  /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  */
+);
+
+.search-bar {
+    display: flex;
+
+    &--icon {
+        padding: 0;
+    }
+}
+
+body {
+    margin: 0;
+}
