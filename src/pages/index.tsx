@@ -20,23 +20,18 @@ export default class extends React.Component<IndexPageProps, {}> {
     public render() {
         return (
             <div>
-                <h1>Hi people</h1>
-                <p>
-                    Hey fren <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-                </p>
-                <p>Now go build something great. How do I Ops</p>
-                <Link to='/page-2/'>Go to page 2</Link>
+                Bacon ipsum dolor amet pastrami porchetta spare ribs boudin, meatball tail sirloin jowl andouille bacon. Jerky hamburger bacon, meatball buffalo landjaeger pork belly tenderloin beef ribs ham hock turducken ribeye. Corned beef strip steak andouille, pork belly short ribs meatball tenderloin pork chop shoulder shank capicola alcatra. Brisket ground round spare ribs frankfurter picanha bresaola cupim salami kevin ham hock pancetta swine andouille drumstick alcatra. Kevin picanha biltong, chuck prosciutto tri-tip pork loin ribeye leberkas filet mignon porchetta salami. Leberkas pork short loin ground round, spare ribs short ribs shank pancetta filet mignon turkey.
             </div>
         );
     }
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    query IndexQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
     }
-  }
 `;

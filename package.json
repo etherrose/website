@@ -8,10 +8,12 @@
     },
     "author": "hoo29 & TerminalStar",
     "dependencies": {
+        "foundation-sites": "^6.4.4-rc1",
         "gatsby": "^1.9.119",
         "gatsby-link": "^1.6.28",
         "gatsby-plugin-react-helmet": "^1.0.8",
-        "gatsby-plugin-typescript": "^1.4.10"
+        "gatsby-plugin-typescript": "^1.4.10",
+        "material-ui": "^1.0.0-beta.34"
     },
     "repository": {
         "url": "https://github.com/etherrose/website"
@@ -26,9 +28,13 @@
     "devDependencies": {
         "@types/node": "^9.4.6",
         "@types/react": "^16.0.38",
+        "@types/react-burger-menu": "^2.2.0",
         "@types/react-dom": "^16.0.4",
         "@types/react-helmet": "^5.0.4",
+        "gatsby-plugin-sass": "^1.0.17",
+        "material-ui-icons": "^1.0.0-beta.17",
         "prettier": "^1.8.2",
+        "react-burger-menu": "^2.2.3",
         "tslint": "^5.9.1",
         "typescript": "^2.7.2"
     }

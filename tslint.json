@@ -21,7 +21,8 @@
         "quotemark": [
             true,
             "single"
-        ]
+        ],
+        "max-line-length": 300
     },
     "rulesDirectory": []
 }
