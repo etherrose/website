@@ -23,9 +23,9 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
                         <Menu pageWrapId={'page-wrap'} outerContainerId={'outer-container'}>
                             <a id='home' className='menu-item' href='/'>Home</a>
                             <a id='about' className='menu-item menu-item--about' href='/about'>About</a>
-                            <a id='about' className='menu-item menu-item--sub' href='/about'>Consultants</a>
-                            <a id='about' className='menu-item menu-item--sub' href='/about'>Projects</a>
-                            <a id='about' className='menu-item menu-item--sub' href='/about'>Testimonials</a>
+                            <a id='consultants' className='menu-item menu-item--sub' href='/about'>Consultants</a>
+                            <a id='projects' className='menu-item menu-item--sub' href='/about'>Projects</a>
+                            <a id='testimonials' className='menu-item menu-item--sub' href='/about'>Testimonials</a>
                             <a id='contact' className='menu-item' href='/contact'>Contact</a>
                         </Menu>
                     </div>
