@@ -1,28 +1,16 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+        "tslint-config-prettier"
     ],
     "jsRules": {},
     "rules": {
-        "interface-name": [
-            "never-prefix"
-        ],
-        "member-access": [
-            false
-        ],
-        "ordered-imports": [
-            false
-        ],
-        "no-console": [
-            false
-        ],
-        "no-var-requires": false,
-        "quotemark": [
-            true,
-            "single"
-        ],
-        "max-line-length": 300
+        "ordered-imports": false,
+        "object-literal-sort-keys": false,
+        "await-promise": true,
+        "no-return-await": true,
+        "no-console": false
     },
     "rulesDirectory": []
 }
